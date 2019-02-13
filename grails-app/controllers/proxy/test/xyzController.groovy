@@ -7,6 +7,9 @@ class xyzController {
     def dosum(){
         BigDecimal a = 22.95
         BigDecimal b = 2.295
-        render(view: "/xyz/result", model:[result: a+b])
+
+        BigDecimal result = a+b
+        String cal = a.toString()concat(" + ".concat(b.toString()))
+        render(view: "/xyz/result", model:[result: cal.concat(" = ".concat(result.toString()))])
     }
 }
